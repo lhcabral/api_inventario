@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Inventarios from './views/Inventarios.vue'
+import InventarioForm from './views/InventarioForm.vue'
 
 Vue.use(Router)
 
@@ -14,10 +17,23 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      // component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: About
+    },
+    {
+      path: '/inventarios',
+      name: 'inventarios',
+      component: Inventarios
+    },
+    {
+      path: '/inventario/novo',
+      name: 'inventario-novo',
+      component: InventarioForm
+    },
+    {
+      path: '/inventario/:id/alterar',
+      name: 'inventario-alterar',
+      component: InventarioForm
     }
   ]
 })
